@@ -1,0 +1,15 @@
+[user]
+	name = AD7six
+	email = andydawson76@yahoo.co.uk
+[color]
+	status = auto
+	branch = auto
+[core]
+	excludesfile = "/home/andy/.gitignore"
+[alias]
+      st = status
+      di = diff
+      co = checkout
+      ci = commit
+      br = branch
+      sta = stash

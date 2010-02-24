@@ -1,0 +1,20 @@
+#!/bin/sh
+here=`pwd`
+for f in $(find ! -ipath "*.svn*" ! -name "linkFiles" ! -name "install" ! -name "*~" -print 2>/dev/null); do
+	f=`echo $f | sed 's/^\.\///'`
+	if [ $f = '.' ]; then
+		continue
+	fi
+	if [ -h ~/$f ]; then
+		continue
+	fi
+	if [ -e ~/$f ]; then
+		if [ -d ~/$f ]; then
+			continue
+		fi
+		cp ~/$f $here/$f
+		rm ~/$f
+	fi
+	echo ln -sf $here/$f ~/$f
+	ln -sf $here/$f ~/$f
+done

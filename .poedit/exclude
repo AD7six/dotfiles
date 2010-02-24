@@ -1,0 +1,6 @@
+.svn
+*.*~
+*.*~~
+*.swp
+core.php
+database.php

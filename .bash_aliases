@@ -43,3 +43,4 @@ alias push='git checkout tmp && git checkout app/tmp && git stash && git push &&
 alias stashdiff='git show $(git stash list | cut -d":" -f 1)'
 alias st="git status | sed '/ in what will be committed/,\$d'"
 alias rmTmp="find -name ".temporaryFile" -exec rm -rf {} \;"
+alias subStatus="here=`pwd` && cd ~/www/cakes/1.3.x.x && git submodule foreach git log origin..HEAD --oneline && cd $here"

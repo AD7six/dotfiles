@@ -118,4 +118,7 @@ set number
 set tabstop=4
 set shiftwidth=4
 
+" http://www.catonmat.net/blog/top-ten-one-liners-from-commandlinefu-explained/
+:nmap :suw :w !sudo tee %
+
 filetype indent plugin on

@@ -41,6 +41,11 @@ alias dcommit='touch .temporaryFile && git add -f .temporaryFile && git stash &&
 alias restart='sudo /etc/init.d/lighttpd restart'
 alias push='git checkout tmp && git checkout app/tmp && git stash && git push && git stash pop'
 alias stashdiff='git show $(git stash list | cut -d":" -f 1)'
-alias st="git status | sed '/ in what will be committed/,\$d'"
+alias st="if [[ -d .svn ]];
+then 
+	svn status -q;
+else
+	git status | sed '/ in what will be committed/,\$d'
+fi"
 alias rmTmp="find -name ".temporaryFile" -exec rm -rf {} \;"
 alias subStatus="here=`pwd` && cd ~/www/cakes/1.3.x.x && git submodule foreach git log origin..HEAD --oneline && cd $here"

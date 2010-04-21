@@ -1,0 +1,40 @@
+adduser andy
+
+# Always want these
+pacman -S samba
+pacman -S sshfs
+pacman -S rsync
+pacman -S screen
+pacman -S vim
+pacman -S ctags
+pacman -S vim-taglist
+pacman -S vim-supertab
+pacman -S vim-pastie
+pacman -S vim-matchit
+pacman -S git
+pacman -S tig
+pacman -S svn
+
+# Basics
+pacman -S php
+pacman -S php-cgi
+pacman -S lighttpd
+pacman -S mysql
+
+# Most likely
+pacman -S php-curl
+pacman -S php-gd
+pacman -S tidyhtml
+pacman -S imagemagick
+pacman -S imagemagick-doc
+
+# if it's not a server
+pacman -S xorg
+pacman -S xorg-xinit
+pacman -S awesome
+
+## Refs
+# http://www.ahinc.com/linux101/users.htm
+# http://dev.mysql.com/doc/refman/5.1/en/adding-users.html
+# git://github.com/AD7six/mi_install.git
+# git@github.com:AD7six/mi_install.git

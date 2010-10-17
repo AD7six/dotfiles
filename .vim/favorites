@@ -1,2 +1,0 @@
-" reverse extract code. converts $User to $row['User']
-:%s/\$\([A-Z][a-zA-Z]*\)/$row['\1']/gc

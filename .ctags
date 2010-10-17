@@ -1,7 +1,0 @@
---langdef=cake2
---langmap=cake2:.php
---regex-cake2=/^class ([A-Z][a-zA-Z0-9]*)/\1/c/
---regex-cake2=/^\s*interface ([A-Z][a-zA-Z0-9]*)/\1/c/
---regex-cake2=/^\s*(public |static |abstract |protected |private )*function &?([^\(]*)/\2/f/
---regex-cake2=/^\s*define\([\'\"]([^\'\"]*)/\1/d/
---regex-cake2=/^\s*const ([^ ]*)/\1/d/

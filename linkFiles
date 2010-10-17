@@ -1,20 +1,34 @@
-#!/bin/sh
+#!/bin/bash
+home=~
 here=`pwd`
-for f in $(find ! -ipath "*.svn*" ! -name "linkFiles" ! -name "install" ! -name "*~" -print 2>/dev/null); do
-	f=`echo $f | sed 's/^\.\///'`
-	if [ $f = '.' ]; then
+dryrun=
+ignore='(^\.$|^\.\.$|^\.git$|^[^\.]|~$)'
+
+i=0
+commands=()
+for f in $(ls -a 2>/dev/null); do
+	if [[ $f =~ $ignore ]]; then
 		continue
 	fi
 	if [ -h ~/$f ]; then
+		echo "skipping $f it's already a symbolic link"
 		continue
 	fi
 	if [ -e ~/$f ]; then
-		if [ -d ~/$f ]; then
-			continue
-		fi
-		cp ~/$f $here/$f
-		rm ~/$f
+		commands[$i]="cp -R $home/$f $here/$f"
+		let i++
+		commands[$i]="rm -rf $home/$f"
+		let i++
+		
 	fi
-	echo ln -sf $here/$f ~/$f
-	ln -sf $here/$f ~/$f
+	commands[$i]="ln -sf $here/$f $home/$f"
+	let i++
+done
+
+for ((j=0;j<$i;j++)) do
+	echo ${commands[$j]}
+	if [ -z $dryrun ]; then
+		continue
+	fi
+	${commands[$j]}
 done

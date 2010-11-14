@@ -26,8 +26,10 @@ for f in $(ls -a 2>/dev/null); do
 done
 
 for ((j=0;j<$i;j++)) do
-	echo ${commands[$j]}
 	if [ -z $dryrun ]; then
+		echo ${commands[$j]}
+	else
+		echo "${commands[$j]} [dryrun]"
 		continue
 	fi
 	${commands[$j]}

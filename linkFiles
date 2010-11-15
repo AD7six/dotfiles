@@ -2,11 +2,11 @@
 home=~
 here=`pwd`
 dryrun=
-ignore='(^\.$|^\.\.$|^\.git$|^[^\.]|~$)'
+ignore='(^\.git$|^[^\.]|~$)'
 
 i=0
 commands=()
-for f in $(ls -a 2>/dev/null); do
+for f in $(ls -A 2>/dev/null); do
 	if [[ $f =~ $ignore ]]; then
 		continue
 	fi

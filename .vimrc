@@ -109,7 +109,7 @@ set backupdir=~/.vim/_backup/,~/tmp,.
 set undofile
 set undodir=~/.vim/_undo/
 
-" Stuff with a username of password goes in here
+" Stuff with a username or password goes in here
 source ~/.vimprivate
 
 call pathogen#runtime_append_all_bundles()

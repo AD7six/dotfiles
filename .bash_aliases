@@ -30,4 +30,4 @@ alias c="clear"
 alias m="more"
 alias phpL='find . -type f -name "*.php" -exec php -l {} \; | grep -v "No syntax errors"'
 alias restart='sudo /etc/rc.d/nginx restart'
-alias fixPerms="find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
+alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."

@@ -93,6 +93,7 @@ PS4='+ '
 }
 proml
 
-if [ -n "$DISPLAY" ]; then
-	 BROWSER=chromium
- fi
+setxkbmap es
+
+EDITOR=vim
+BROWSER=chromium

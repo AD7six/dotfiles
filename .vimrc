@@ -96,6 +96,7 @@ set shiftwidth=4
 
 filetype indent plugin on
 set errorformat=%m\ in\ %f\ on\ line\ %l
+map <C-B> :!php -l %<CR>
 
 " swap files (.swp) in a common location
 " // means use the file's full path

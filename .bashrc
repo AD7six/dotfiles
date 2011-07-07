@@ -93,7 +93,5 @@ PS4='+ '
 }
 proml
 
-setxkbmap es
-
 EDITOR=vim
 BROWSER=chromium

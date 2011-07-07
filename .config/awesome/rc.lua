@@ -397,9 +397,8 @@ function run_once(prg,arg_string,pname,screen)
         awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
     end
 end
-run_once("conky")
-run_once("skype")
--- run_once("mocp", "-p")
+run_once("skype", "", "skype", 3)
 run_once("moc-tray")
-run_once("chromium")
+run_once("mocp", "-p")
+run_once("chromium", "", "chromium", 1)
 -- }}}

@@ -6,4 +6,6 @@ do
   sleep 15m
 done &
 
+setxkbmap es -option caps:escape
+
 exec awesome

@@ -1,2 +1,2 @@
 " use jslint
-au FileType javascript set makeprg=jslint\ %
+set makeprg=jslint\ -p\ %

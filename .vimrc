@@ -1,4 +1,6 @@
 " My vimrc file. mostly from the example for a vimrc file. by Bram Moolenaar
+"
+call pathogen#runtime_append_all_bundles()
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -113,4 +115,5 @@ set undodir=~/.vim/_undo/
 " Stuff with a username or password goes in here
 source ~/.vimprivate
 
-call pathogen#runtime_append_all_bundles()
+" Enable mouse on CLI
+set mouse=a

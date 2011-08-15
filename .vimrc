@@ -96,9 +96,8 @@ set shiftwidth=4
 " http://www.catonmat.net/blog/top-ten-one-liners-from-commandlinefu-explained/
 :nmap :suw :w !sudo tee %
 
-filetype indent plugin on
-set errorformat=%m\ in\ %f\ on\ line\ %l
-map <C-B> :!php -l %<CR>
+:filetype plugin indent on
+map <C-B> :make<CR>
 
 " swap files (.swp) in a common location
 " // means use the file's full path

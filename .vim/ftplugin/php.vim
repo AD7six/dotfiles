@@ -41,6 +41,7 @@ let php_htmlInStrings=0
 " Linting
 "
 " Use PHP syntax check when doing :make
+set errorformat=%m\ in\ %f\ on\ line\ %l
 set makeprg=php\ -l\ %
 
 " Parse PHP error output

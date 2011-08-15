@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/nerd-tree"]
 	path = .vim/bundle/nerd-tree
 	url = git://github.com/vim-scripts/The-NERD-tree.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git

@@ -115,7 +115,7 @@ set undodir=~/.vim/_undo/
 source ~/.vimprivate
 
 " Enable mouse on CLI
-set mouse=a
+"set mouse=a
 
 " Make NERD tree easily accessible
 nmap <silent> <F7> :NERDTreeToggle<CR>

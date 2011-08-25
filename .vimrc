@@ -87,6 +87,7 @@ endfunction
 set incsearch
 set wildignore=*~,*.bak
 
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L
 set laststatus=2
 set number
 
@@ -111,11 +112,15 @@ set backupdir=~/.vim/_backup/,~/tmp,.
 set undofile
 set undodir=~/.vim/_undo/
 
-" Stuff with a username or password goes in here
-source ~/.vimprivate
-
 " Enable mouse on CLI
 "set mouse=a
 
 " Make NERD tree easily accessible
 nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <C-p> :call PhpDocSingle()<CR>
+
+" Stuff with a username or password goes in here
+" Also things that are global but too embarassing to appear in this file
+source ~/.vimprivate
+
+

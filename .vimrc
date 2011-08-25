@@ -118,6 +118,7 @@ set undodir=~/.vim/_undo/
 " Make NERD tree easily accessible
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <C-p> :call PhpDocSingle()<CR>
+nmap <C-l> :TagbarToggle<CR>
 
 " Stuff with a username or password goes in here
 " Also things that are global but too embarassing to appear in this file

@@ -31,3 +31,9 @@ alias m="more"
 alias phpL='find . -type f -name "*.php" -exec php -l {} \; | grep -v "No syntax errors"'
 alias restart='sudo /etc/rc.d/nginx restart'
 alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
+
+# Upload a file to my public dump folder
+7up ()
+{ 
+	scp $@ ad7six:ad7six.com/dump/
+}

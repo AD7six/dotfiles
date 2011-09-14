@@ -27,6 +27,24 @@ gtar () {
 unbtar () { tar xvjf "$@"; }
 ungtar () { tar xvzf "$@"; }
 
+# find shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
+# ff:  to find a file under the current directory
+ff () { find . -name "$@" ; }
+# ffs: to find a file whose name starts with a given string
+ffs () { find . -name "$@"'*' ; }
+# ffe: to find a file whose name ends with a given string
+ffe () { find . -name '*'"$@" ; }
+# find_larger: find files larger than a certain size (in bytes)
+findLarger() { find . -type f -size +${1}c ; }
+
+# text shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
+# fixlines: edit files in place to ensure Unix line-endings
+fixlines () { perl -pi~ -e 's/\r\n?/\n/g' "$@" ; }
+
+# networking shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
+# httpHeaders: get just the HTTP headers from a web page (and its redirects)
+httpHeaders () { curl -I -L $@ ; }
+
 # delete crap from a directory
 alias clean='echo -n "Really clean this directory?";
 	read yorn;

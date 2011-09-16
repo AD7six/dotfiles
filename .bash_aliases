@@ -22,7 +22,7 @@ btar () {
 }
 gtar () { 
 	archive=`basename $(`readlink -f $@`)`;
-	tar cjf "$archive".tar.gz "$archive"; 
+	tar czf "$archive".tar.gz "$archive"; 
 }
 unbtar () { tar xvjf "$@"; }
 ungtar () { tar xvzf "$@"; }

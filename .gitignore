@@ -21,3 +21,6 @@ tags
 
 # Git svn jik
 .svn
+
+#Editor paths
+.vim/_undo

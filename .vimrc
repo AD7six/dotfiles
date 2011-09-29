@@ -93,6 +93,8 @@ set number
 
 set tabstop=4
 set shiftwidth=4
+set shiftround
+set smarttab
 
 " http://www.catonmat.net/blog/top-ten-one-liners-from-commandlinefu-explained/
 :nmap :suw :w !sudo tee %
@@ -118,10 +120,8 @@ set undodir=~/.vim/_undo/
 " Make NERD tree easily accessible
 nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <C-p> :call PhpDocSingle()<CR>
-nmap <C-l> :TagbarToggle<CR>
+nmap <C-y> :TagbarToggle<CR>
 
 " Stuff with a username or password goes in here
 " Also things that are global but too embarassing to appear in this file
 source ~/.vimprivate
-
-

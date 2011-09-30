@@ -69,4 +69,4 @@ alias m="more"
 alias phpL='find . -type f -name "*.php" -exec php -l {} \; | grep -v "No syntax errors"'
 alias restart='sudo /etc/rc.d/nginx restart'
 alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
-alias tether="sudo su; ifconfig usb0 up && dhcpcd usb0"
+alias tether="sudo ifconfig eth0 down && sudo ifconfig usb0 up && sudo dhcpcd usb0"

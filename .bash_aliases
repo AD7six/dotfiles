@@ -9,7 +9,12 @@ addAlias () {
 }
 
 # Upload a file to my public dump folder
-7up () { scp $@ ad7six:ad7six.com/dump/ ; }
+7up () { 
+	scp $@ ad7six:ad7six.com/dump/; 
+	url="http://ad7six.com/dump/${1#*\/}";
+	chromium $url;
+	echo $url;
+}
 
 # ls shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
 ll () { ls -l "$@" | less ; }

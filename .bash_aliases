@@ -42,6 +42,10 @@ ffe () { find . -name '*'"$@" ; }
 # find_larger: find files larger than a certain size (in bytes)
 findLarger() { find . -type f -size +${1}c ; }
 
+# Clean up symlinks
+findBrokenLinks() { find -L "$@" -type l; }
+deleteBrokenLinks() { find -L "$@" -type l -print0 | xargs -0 rm; }
+
 # text shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
 # fixlines: edit files in place to ensure Unix line-endings
 fixlines () { perl -pi~ -e 's/\r\n?/\n/g' "$@" ; }
@@ -74,4 +78,5 @@ alias m="more"
 alias phpL='find . -type f -name "*.php" -exec php -l {} \; | grep -v "No syntax errors"'
 alias restart='sudo /etc/rc.d/nginx restart'
 alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
-alias tether="sudo ifconfig eth0 down && sudo ifconfig usb0 up && sudo dhcpcd usb0"
+alias tether="sudo ifconfig eth0 down; sudo ifconfig usb0 up; sudo dhcpcd usb0"
+alias fether="sudo ifconfig eth0 up; sudo ifconfig usb0 down; sudo dhcpcd eth0"

@@ -17,8 +17,8 @@ addAlias () {
 }
 
 # ls shortcuts, taken from http://hayne.net/MacDev/Bash/aliases.bash
-ll () { ls -l "$@" | less ; }
-lt () { ls -lt "$@" | less ; }
+ll () { ls -l "$@"; }
+lt () { ls -lt "$@"; }
 
 # create or decompress a file/folder
 btar () { 
@@ -80,3 +80,4 @@ alias restart='sudo /etc/rc.d/nginx restart'
 alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
 alias tether="sudo ifconfig eth0 down; sudo ifconfig usb0 up; sudo dhcpcd usb0"
 alias fether="sudo ifconfig eth0 up; sudo ifconfig usb0 down; sudo dhcpcd eth0"
+alias gh='cd `git rev-parse --show-toplevel`'

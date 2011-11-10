@@ -72,6 +72,10 @@ else
 	git status | sed '/ in what will be committed/,\$d'
 fi"
 
+# from https://github.com/leek/dotfiles/blob/master/profile
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias c="clear"
 alias m="more"

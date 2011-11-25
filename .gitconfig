@@ -1,6 +1,10 @@
 [user]
 	name = AD7six
 	email = andydawson76@gmail.com
+[core]
+	excludesfile = "/home/andy/.gitignore"
+	whitespace = tabwidth=4
+
 [color]
 	ui = true
 	status = auto
@@ -19,9 +23,14 @@
 	added = yellow
 	changed = white
 	new = white bold
-[core]
-	excludesfile = "/home/andy/.gitignore"
-	witespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol	
+[diff]
+	noprefix = true
+
+[push]
+	default = upstream
+[branch]
+	autosetuprebase = always
+
 [alias]
 	st = status
 	di = diff

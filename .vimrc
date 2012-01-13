@@ -122,6 +122,10 @@ nmap <silent> <F7> :NERDTreeToggle<CR>
 nmap <C-p> :call PhpDocSingle()<CR>
 nmap <C-y> :TagbarToggle<CR>
 
+" Since it applies to all file types I use - strip trailing whitespace on
+" write automatically
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Stuff with a username or password goes in here
 " Also things that are global but too embarassing to appear in this file
 source ~/.vimprivate

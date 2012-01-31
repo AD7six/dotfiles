@@ -220,7 +220,7 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "XF86AudioEject", function () awful.util.spawn("mocp -x") end),
     awful.key({                   }, "XF86Tools", function () awful.util.spawn("mocp -p") end),
 
-    awful.key({                   }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null && gimp ~/screenshots/$f'") end),
+    awful.key({                   }, "Print", function () awful.util.spawn(terminal .. " -e screenshot.sh") end), -- see https://github.com/AD7six/scripts/blob/master/screenshot.sh
     awful.key({                   }, "XF86Mail", function () awful.util.spawn("chromium https://gmail.com") end),
     awful.key({                   }, "XF86Calculator", function () awful.util.spawn("speedcrunch") end),
     awful.key({                   }, "XF86HomePage", function () awful.util.spawn("notify-send 'not configured' 'edit .config/awesome/rc.lua to do something'") end),
@@ -391,7 +391,7 @@ function run_once(prg,arg_string,pname,screen)
        pname = prg
     end
 
-    if not arg_string then 
+    if not arg_string then
         awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
     else
         awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)

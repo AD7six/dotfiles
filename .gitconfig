@@ -2,6 +2,7 @@
 	name = AD7six
 	email = andydawson76@gmail.com
 [core]
+	editor = vim
 	excludesfile = "/home/andy/.gitignore"
 	whitespace = tabwidth=4
 

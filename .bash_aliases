@@ -9,8 +9,8 @@ addAlias () {
 }
 
 # Upload a file to my public dump folder
-7up () { 
-	scp $@ ad7six:ad7six.com/dump/; 
+7up () {
+	scp $@ ad7six:ad7six.com/dump/;
 	url="http://ad7six.com/dump/${1#*\/}";
 	chromium $url;
 	echo $url;
@@ -21,13 +21,13 @@ ll () { ls -l "$@"; }
 lt () { ls -lt "$@"; }
 
 # create or decompress a file/folder
-btar () { 
+btar () {
 	archive=`basename $(readlink -f $@)`;
-	tar cjf "$archive".tar.bz2 "$archive"; 
+	tar cjf "$archive".tar.bz2 "$archive";
 }
-gtar () { 
+gtar () {
 	archive=`basename $(`readlink -f $@`)`;
-	tar czf "$archive".tar.gz "$archive"; 
+	tar czf "$archive".tar.gz "$archive";
 }
 unbtar () { tar xvjf "$@"; }
 ungtar () { tar xvzf "$@"; }
@@ -66,7 +66,7 @@ alias clean='echo -n "Really clean this directory?";
 
 # what's the status of the current repository. gets rid of un committed files from git reports
 alias st="if [[ -d .svn ]];
-then 
+then
 	svn status -q;
 else
 	git status | sed '/ in what will be committed/,\$d'
@@ -81,7 +81,7 @@ alias c="clear"
 alias m="more"
 alias phpL='find . -type f -name "*.php" -exec php -l {} \; | grep -v "No syntax errors"'
 alias restart='sudo /etc/rc.d/nginx restart'
-alias fixPerms="sudo find . -type f -exec chmod -x {} \; && chmod -R u+rwX,go+rX,go-w ."
+alias fixPerms="sudo find . -type d -exec chmod 755 {} \; && sudo find . -type f -exec chmod 644 {} \;"
 alias tether="sudo ifconfig eth0 down; sudo ifconfig usb0 up; sudo dhcpcd usb0"
 alias fether="sudo ifconfig eth0 up; sudo ifconfig usb0 down; sudo dhcpcd eth0"
 alias gh='cd `git rev-parse --show-toplevel`'

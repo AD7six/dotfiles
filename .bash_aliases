@@ -85,3 +85,4 @@ alias fixPerms="sudo find . -type d -exec chmod 0755 {} \; -or -type f -exec chm
 alias tether="sudo ifconfig eth0 down; sudo ifconfig usb0 up; sudo dhcpcd usb0"
 alias fether="sudo ifconfig eth0 up; sudo ifconfig usb0 down; sudo dhcpcd eth0"
 alias gh='cd `git rev-parse --show-toplevel`'
+alias git="git-achievements"

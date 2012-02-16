@@ -3,6 +3,8 @@
 ##
 ## Commit configuration files.
 ##
+## Reference: http://grahamweldon.com/posts/view/automatic-commits-for-server-configuration-files
+
 if [ ! -d /etc/.git ]; then
 	cd /etc
 	git init

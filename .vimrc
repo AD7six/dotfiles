@@ -107,7 +107,7 @@ map <C-B> :make<CR>
 set dir=~/.vim/_swap//
 
 " backup files (~) in a common location if possible
-set backup 
+set backup
 set backupdir=~/.vim/_backup/,~/tmp,.
 
 " turn on undo files, put them in a common location
@@ -129,3 +129,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Stuff with a username or password goes in here
 " Also things that are global but too embarassing to appear in this file
 source ~/.vimprivate
+
+" :noremap :wq :au! syntastic<cr>:wq

@@ -54,6 +54,12 @@ fixlines () { perl -pi~ -e 's/\r\n?/\n/g' "$@" ; }
 # httpHeaders: get just the HTTP headers from a web page (and its redirects)
 httpHeaders () { curl -I -L $@ ; }
 
+# What ips on the local network respond to ping
+ipsAlive() {
+	root=`ifconfig | grep "inet addr.*Bcast" | sed -e 's/.*inet addr:\(\S\+\)\..*/\1/'`
+	for ip in $(seq 1 254); do ping -c 1 $root.$ip>/dev/null; [ $? -eq 0 ] && echo "$root.$ip UP" || : ; done
+}
+
 # delete crap from a directory
 alias clean='echo -n "Really clean this directory?";
 	read yorn;

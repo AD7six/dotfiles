@@ -60,6 +60,19 @@ ipsAlive() {
 	for ip in $(seq 1 254); do ping -c 1 $root.$ip>/dev/null; [ $? -eq 0 ] && echo "$root.$ip UP" || : ; done
 }
 
+# Watchin' movies or cranking code?
+toggleScreenBlanking() {
+	local blanktimeout=`xset q | grep timeout | sed 's/^.*timeout: \+\([0-9]\+\).*$/\1/'`
+
+	if [[ "$blanktimeout" = "0" ]]; then
+		xset s 600
+		notify-send "Screen blanking set to 600s";
+	else
+		xset s off
+		notify-send "Screen blanking disabled";
+	fi
+}
+
 # delete crap from a directory
 alias clean='echo -n "Really clean this directory?";
 	read yorn;

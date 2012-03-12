@@ -64,11 +64,11 @@ ipsAlive() {
 toggleScreenBlanking() {
 	local blanktimeout=`xset q | grep timeout | sed 's/^.*timeout: \+\([0-9]\+\).*$/\1/'`
 
-	if [[ "$blanktimeout" = "0" ]]; then
+	if [[ "$blanktimeout" -gt "600" ]]; then
 		xset s 600
 		notify-send "Screen blanking set to 600s";
 	else
-		xset s off
+		xset s 10800
 		notify-send "Screen blanking disabled";
 	fi
 }
